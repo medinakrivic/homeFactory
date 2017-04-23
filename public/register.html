@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="registerUser">
 <head>
 <title>homeFactory | Register</title>
 <!-- for-mobile-apps -->
@@ -13,24 +13,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="js/jquery.min.js"></script>
-<!-- //js -->
-<!-- cart -->
-	<script src="js/simpleCart.min.js"> </script>
-<!-- cart -->
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-<!-- for bootstrap working -->
-	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+
 <!-- //for bootstrap working -->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet">
-<script src="js/wow.min.js"></script>
-<script>
- new WOW().init();
-</script>
-<!-- //animation-effect -->
+
 </head>
 
 <body>
@@ -38,15 +26,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="container">
 			<div class="header-grid">
-				<div class="header-grid-left animated wow slideInLeft" data-wow-delay=".5s">
+				<div class="header-grid-left">
 					<ul>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">@example.com</a></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@homefactory.tk">info@homefactory.tk</a></li>
 						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 <span>567</span> 892</li>
 						<li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i><a href="login.html">Login</a></li>
 						<li class="active"><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="register.html">Register</a></li>
 					</ul>
 				</div>
-				<div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
+				<div class="header-grid-right">
 					<ul class="social-icons">
 						<li><a href="#" class="facebook"></a></li>
 						<li><a href="#" class="twitter"></a></li>
@@ -132,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- breadcrumbs -->
 	<div class="breadcrumbs">
 		<div class="container">
-			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+			<ol class="breadcrumb breadcrumb1">
 				<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
 				<li class="active">Register Page</li>
 			</ol>
@@ -141,23 +129,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //breadcrumbs -->
 <!-- register -->
 	<div class="register">
-		<div class="container">
-			<h3 class="animated wow zoomIn" data-wow-delay=".5s">Register Here</h3>
-			<p class="est animated wow zoomIn" data-wow-delay=".5s">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-				deserunt mollit anim id est laborum.</p>
+		<div class="container" ng-view>
+			<h3>Register Here</h3>
+			<p class="est zoomIn"></p>
 			<div class="login-form-grids">
-				<h5 class="animated wow slideInUp" data-wow-delay=".5s">profile information</h5>
-				<form class="animated wow slideInUp" data-wow-delay=".5s">
-					<input type="text" placeholder="First Name..." required=" " >
-					<input type="text" placeholder="Last Name..." required=" " >
+				<h5>profile information</h5>
+				<form>
+					<input type="text" placeholder="First Name" required=" " ng-module="firstName" >
+					<input type="text" placeholder="Last Name" required=" " ng-module="lastName" >
+					<input type="text" placeholder="City" required=" " >
+					<input type="tel" placeholder="Phone number" required=" ">
 				</form>
-				<div class="register-check-box animated wow slideInUp" data-wow-delay=".5s">
-					<div class="check">
+				<div class="register-check-box" >
+					<!--<div class="check">
 						<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Subscribe to Newsletter</label>
-					</div>
+					</div>-->
 				</div>
-				<h6 class="animated wow slideInUp" data-wow-delay=".5s">Login information</h6>
-				<form class="animated wow slideInUp" data-wow-delay=".5s">
+				<h6>Login information</h6>
+				<form>
 					<input type="email" placeholder="Email Address" required=" " >
 					<input type="password" placeholder="Password" required=" " >
 					<input type="password" placeholder="Password Confirmation" required=" " >
@@ -169,7 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type="submit" value="Register">
 				</form>
 			</div>
-			<div class="register-home animated wow slideInUp" data-wow-delay=".5s">
+			<div class="register-home">
 				<a href="index.html">Home</a>
 			</div>
 		</div>
@@ -179,20 +168,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="footer-grids">
-				<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+				<div class="col-md-3 footer-grid">
 					<h3>About Us</h3>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+					<p></span></p>
 				</div>
-				<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
+				<div class="col-md-3 footer-grid">
 					<h3>Contact Info</h3>
 					<ul>
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> <span></span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@homefactor.tk</a></li>
 						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
 					</ul>
 				</div>
-				<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
+				<div class="col-md-3 footer-grid">
 					<h3>Flickr Posts</h3>
 					<div class="footer-grid-left">
 						<a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
@@ -239,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="single.html"><img src="images/9.jpg" alt=" " class="img-responsive" /></a>
 						</div>
 						<div class="footer-grid-sub-grid-right">
-							<h4><a href="single.html">culpa qui officia deserunt</a></h4>
+							<h4><a href="single.html"></a></h4>
 							<p>Posted On 25/3/2016</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -249,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="single.html"><img src="images/10.jpg" alt=" " class="img-responsive" /></a>
 						</div>
 						<div class="footer-grid-sub-grid-right">
-							<h4><a href="single.html">Quis autem vel eum iure</a></h4>
+							<h4><a href="single.html"></a></h4>
 							<p>Posted On 25/3/2016</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -257,14 +245,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-				<h2><a href="index.html">Best Store <span>shop anywhere</span></a></h2>
+			<div class="footer-logo">
+				<h2><a href="index.html">homeFactory <span>shop anywhere</span></a></h2>
 			</div>
-			<div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-				<p>&copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<div class="copy-right">
+				<p>&copy 2016 homeFactory. All rights reserved </p>
 			</div>
 		</div>
 	</div>
+
+	<!-- angular -->
+
+	<script src ="node_modules/angular/angular.js"></script>
+	<script src ="node_modules/angular-route/angular-route.js"></script>
+	<script src="angular-app/app.js"></script>
+	<script src="angular-app/users/usersController.js"></script>
+	<!-- js -->
+
+	
+	<script src="js/jquery.min.js"></script>
+	<!-- //js -->
+	<!-- cart -->
+		<script src="js/simpleCart.min.js"> </script>
+	<!-- cart -->
+
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<!-- for bootstrap working -->
+		<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+		<link href="css/animate.min.css" rel="stylesheet">
+
 <!-- //footer -->
 </body>
 </html>

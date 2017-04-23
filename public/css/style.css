@@ -367,6 +367,10 @@ a.simpleCart_empty {
 	float:left;
 	width:33.1%;
 }
+.banner-bottom-grid-center{
+	margin: 1em;
+	width:33.1%;
+}
 .banner-bottom-grid-left1{
 	float:left;
 	width:32.5%;
@@ -1642,7 +1646,7 @@ h2.typoh2{
 .mail-grids{
 	margin:3em 0;
 }
-.mail-grid-left input[type="text"],.mail-grid-left input[type="email"],.mail-grid-left textarea{
+.mail-grid-left input[type="text"],.mail-grid-left input[type="email"],.mail-grid-left input[type="tel"],.mail-grid-left textarea{
 	outline: none;
     border: 1px solid #E4E4E4;
     background: #f5f5f5;
@@ -1957,7 +1961,7 @@ label.radio {
 .add-review form{
 	margin:2em 0 0;
 }
-.add-review input[type="text"],.add-review input[type="email"],.add-review textarea{
+.add-review input[type="text"],.add-review input[type="email"],.add-review input[type="tel"],.add-review textarea{
 	outline:none;
 	padding:10px;
 	background:#f5f5f5;
@@ -1975,6 +1979,10 @@ label.radio {
 	margin-bottom:.8em;
 }
 .add-review input[type="text"]:nth-child(3){
+	width:100%;
+	margin:1em 0;
+}
+.add-review input[type="tel"]:nth-child(3){
 	width:100%;
 	margin:1em 0;
 }
@@ -2044,7 +2052,7 @@ label.radio {
 	background:#F7F7F9;
 	margin:3em auto 0;
 }
-.login-form-grids input[type="email"],.login-form-grids input[type="password"],.login-form-grids input[type="text"]{
+.login-form-grids input[type="email"],.login-form-grids input[type="password"],.login-form-grids input[type="tel"],.login-form-grids input[type="text"]{
 	outline: none;
     border: 1px solid #DBDBDB;
     padding: 10px 10px 10px 45px;
@@ -2134,6 +2142,14 @@ label.radio {
 	background:url(../images/img-sp.png) no-repeat 5px -259px #fff;
 }
 .login-form-grids input[type="text"]:nth-child(2){
+	background:url(../images/img-sp.png) no-repeat 0px -298px #fff;
+	margin:1em 0;
+}
+
+.login-form-grids input[type="tel"]{
+	background:url(../images/img-sp.png) no-repeat 5px -259px #fff;
+}
+.login-form-grids input[type="tel"]:nth-child(2){
 	background:url(../images/img-sp.png) no-repeat 0px -298px #fff;
 	margin:1em 0;
 }
@@ -2568,7 +2584,10 @@ td.invert-image a img {
 	.bootstrap-tab-text-grids {
 		margin: 2em 0 0 0em;
 	}
-	.add-review input[type="text"], .add-review input[type="email"], .add-review textarea {
+	.add-review input[type="text"], .add-review input[type="email"],.login-form-grids input[type="tel"]{
+  	background:url(../images/img-sp.png) no-repeat 5px -220px #fff;
+  	margin:1em 0 0;
+  } .add-review textarea {
 		width: 48.4%;
 	}
 	.checkout-left-basket {
@@ -2833,7 +2852,7 @@ td.invert-image a img {
 	.single-right-left:nth-child(2){
 		width:55%;
 	}
-	.add-review input[type="text"], .add-review input[type="email"], .add-review textarea {
+	.add-review input[type="text"], .add-review input[type="email"], .add-review input[type="tel"], .add-review textarea {
 		width: 48.68%;
 	}
 }
@@ -2956,6 +2975,10 @@ td.invert-image a img {
 		min-height: 410px;
 	}
 	.banner-bottom-grid-left {
+		float: none;
+		width: 100%;
+	}
+  .banner-bottom-grid-center {
 		float: none;
 		width: 100%;
 	}
@@ -3091,7 +3114,7 @@ td.invert-image a img {
 	.colr {
 		margin-right: 2em;
 	}
-	.add-review input[type="text"], .add-review input[type="email"], .add-review textarea {
+	.add-review input[type="text"], .add-review input[type="email"],.add-review input[type="tel"], .add-review textarea {
 		width: 48.3%;
 	}
 	 .imagezoom-view {
@@ -3359,7 +3382,7 @@ td.invert-image a img {
 	.bootstrap-tab-text h5, .add-review h4 {
 		margin: 2em 0 1em;
 	}
-	.add-review input[type="text"], .add-review input[type="email"], .add-review textarea {
+	.add-review input[type="text"], .add-review input[type="email"],.add-review input[type="tel"], .add-review textarea {
 		width: 100%;
 	}
 	.add-review input[type="email"] {
@@ -3774,7 +3797,7 @@ td.invert-image a img {
 	.single-right-left h4 {
 		font-size: 1.1em;
 	}
-	.add-review input[type="text"],.checkout-left-basket ul li, .add-review input[type="email"],.mail-grid-left input[type="text"], .mail-grid-left input[type="email"], .mail-grid-left textarea, .add-review textarea,.mail-grid-right1 ul.phone-mail li {
+	.add-review input[type="text"],.checkout-left-basket ul li, .add-review input[type="email"],.add-review input[type="tel"],.mail-grid-left input[type="tel"], .mail-grid-left input[type="text"], .mail-grid-left input[type="email"], .mail-grid-left textarea, .add-review textarea,.mail-grid-right1 ul.phone-mail li {
 		font-size: 13px;
 	}
 	.checkout-left-basket h4 {
@@ -3817,7 +3840,7 @@ td.invert-image a img {
 	.login-form-grids {
 		margin: 1.5em auto 0;
 	}
-	.login-form-grids input[type="email"],.forgot a,.register-check-box label, .login-form-grids input[type="password"], .login-form-grids input[type="text"]{
+	.login-form-grids input[type="email"],.forgot a,.register-check-box label, .login-form-grids input[type="password"],.login-form-grids input[type="tel"], .login-form-grids input[type="text"]{
 		font-size:13px;
 	}
 	.forgot {
