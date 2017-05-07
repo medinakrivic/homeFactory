@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var dburl='mongodb://homefactory.tk:gjucUfqH@80.65.165.60:2721/homefactory?authSource=admin';
 
+mongoose.Promise = global.Promise;
+
 mongoose.connect(dburl);
 
 mongoose.connection.on('connected',function(){
@@ -31,3 +33,6 @@ process.on('SIGUSR2',function(){
 
 
 require('./users.model.js');
+require('./orders.model.js');
+require('./cart.model.js');
+require('./products.model.js');

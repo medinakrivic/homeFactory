@@ -1,9 +1,13 @@
-angular.module('users').controller('usersController',usersController);
+angular.module('app').controller('usersController',usersController);
 
-function usersController($http){
+function usersController($scope,userDataFactory){
   var vm = this;
-  $http.get('/api/users').then(function(response){
-    console.log(response)
-    vm.users = response.data
+
+  userDataFactory.getAllUsers().then(function(response){
+    vm.users=response.data;
+    console.log(response);
   });
+
+
+
 }

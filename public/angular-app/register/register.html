@@ -1,0 +1,71 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">Register Page</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+	<div class="register" ng-controller='usersController'>
+		<div class="container">
+			<h3>Register Here</h3>
+			<p class="est zoomIn"></p>
+			<div class="login-form-grids">
+				<h5>profile information</h5>
+				<form name="vm.reviewForm" ng-submit="vm.NewUser()">
+
+					<input type="text" placeholder="First Name" required ng-model="vm.name" >
+					<div ng-show="vm.reviewForm.name.$dirty && vm.reviewForm.name.$invalid && vm.isSubmitted">
+     			<p>Name is required field!/p>
+ 					</div>
+					<input type="text" placeholder="Last Name" required ng-model="vm.surname" >
+					<div ng-show="vm.reviewForm.surname.$dirty && vm.reviewForm.surname.$invalid && vm.isSubmitted">
+     			<p>Surname is required field!/p>
+ 					</div>
+					<input type="text" placeholder="City" required  ng-model="vm.city" >
+					<div ng-show="vm.reviewForm.city.$dirty && vm.reviewForm.city.$invalid && vm.isSubmitted">
+     			<p>City is required field!/p>
+ 					</div>
+					<input type="tel" placeholder="Phone number" required ng-pattern="/^[0-9]*$/" ng-model="vm.phone">
+					<div ng-show="vm.reviewForm.phone.$dirty && vm.reviewForm.phone.$invalid && vm.isSubmitted">
+     			<p>Phone is required field!</p>
+ 					</div>
+
+				<h6>Login information</h6>
+
+					<input type="email" placeholder="Email Address" required ng-model="vm.email" >
+					<div ng-show="vm.reviewForm.email.$dirty && vm.reviewForm.email.$invalid && vm.isSubmitted">
+     			<p>Email is required field!</p>
+ 					</div>
+					<input type="password" placeholder="Password" required ng-minlength="6" ng-model="vm.password">
+					<div ng-show="vm.reviewForm.password.$dirty && vm.reviewForm.password.$invalid && vm.isSubmitted">
+     			<p>password is required field!</p>
+ 					</div>
+					<!--<input type="password" placeholder="Password Confirmation" required ng.model="vm.passowrdCon">
+					<div ng-show="vm.reviewForm.passwordCon.$dirty && vm.reviewForm.passwordCon.$invalid && vm.isSubmitted">
+     			<p>password is required field!</p>
+				</div>-->
+					<div class="register-check-box">
+						<div class="check">
+							<label class="checkbox"><input type="checkbox" name="checkbox" ng-model="vm.checkbox"><i> </i>I accept the terms and conditions</label>
+						</div>
+					</div>
+					<div ng-show="vm.reviewForm.checkbox.$dirty && vm.reviewForm.checkbox.$invalid && vm.isSubmitted">
+     			<p>Checkbox is required field!</p>
+ 					</div>
+					<div class="alert alert-danger" ng-if="error" ng-repeat="error in errors">
+					 {{error.message}}
+				 </div>
+
+					<input type="submit" value="Register">
+				</form>
+			</div>
+			<div class="register-home">
+				<a href="index.html">Home</a>
+			</div>
+		</div>
+	</div>
+<!-- //register -->

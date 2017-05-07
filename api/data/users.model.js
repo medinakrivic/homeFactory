@@ -1,5 +1,33 @@
 var mongoose = require('mongoose');
 
+var addressUser = new mongoose.Schema({
+  address: String,
+  postCode: String,
+  city:String
+});
+
+var CreditCard = new mongoose.Schema({
+  cardNumber:String,
+  ExpirationDate: Date,
+  CVVNumber: String,
+  CardHolder: String
+ });
+
+var products = new mongoose.Schema({
+
+  productName:{
+    type:String,
+    required:true
+  },
+  productId:{
+    type:String,
+    required:true
+  },
+  productDescription:String,
+  productPictures:[Buffer],   //binary data
+  payedPrice: String,
+});
+
   var userSchema = new mongoose.Schema({
     name: {
       type: String ,
@@ -13,7 +41,6 @@ var mongoose = require('mongoose');
     phone: String,
     active: {
       type: Boolean,
-      required: true,
       "default": true
     },
     email: {
@@ -29,6 +56,9 @@ var mongoose = require('mongoose');
       type: String ,
       required: true
     },
+    address:[addressUser],
+    products:[products],
+    creditCards:[CreditCard]
   });
 
-  mongoose.model('User',userSchema,'Users');
+  mongoose.model('User',userSchema,'users');

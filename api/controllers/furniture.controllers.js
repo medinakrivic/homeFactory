@@ -1,7 +1,7 @@
 var dbconn = require('../data/dbconnection.js');
 var ObjectId = require('mongodb').ObjectID;
 
-module.exports.furnitureGetAll = function(req,res){
+module.exports.productGetAll = function(req,res){
   res
     .status(200)
     .json({"data":true});
