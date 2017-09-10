@@ -1,0 +1,52 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li><a href="#/products">Products</a></li>
+				<li class="active">Single Page</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- single -->
+	<div class="single">
+		<div class="container">
+			<div class="col-md-4 products-left">
+				<figure class="snip1580">
+				<img src={{vm.productPictures}} alt={{vm.productName}} />
+			</figure>
+			</div>
+			<div class="col-md-8 single-right">
+					<h3>{{vm.productName}}</h3>
+					<h4 style="margin-top:10px;"><span class="item_price">{{vm.price}} BAM</h4>
+					<div class="description">
+						<h5><i>Description</i></h5>
+						<p>{{vm.productDescription}}</p>
+					</div>
+					<div class="occasional">
+						<h5>Category</h5>
+						<div class="colr ert">
+							{{vm.productCategoryId.categoryName}}
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="description">
+						<h5><i>Measures</i></h5>
+						<p>{{vm.productMeasures}}</p>
+					</div>
+					<div class="occasion-cart">
+						<a class="item_add" ng-click="vm.addToCart()">add to cart </a>
+					</div>
+			</div>
+			<div ng-if="vm.message" class="my-notify-error" role="alert">
+				<p>{{ vm.message }}</p>
+			</div>
+
+			<div class="clearfix"> </div>
+		</div>
+		<div ng-if="vm.success" class="my-notify-success"  role="alert">
+			<p>{{ vm.success }}</p>
+		</div>
+	</div>
+<!-- //single -->

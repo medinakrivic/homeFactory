@@ -1,0 +1,11 @@
+  <div style="margin:0px 80px 0px 80px;">
+
+<figure class="snip1577" ng-repeat="product in vm.products">
+  <img src={{product.productPictures}} alt={{product.productName}}/>
+  <figcaption>
+    <h3>{{ product.productName }}</h3>
+    <h4><strong>{{ product.price}} BAM</strong></h4>
+  </figcaption>
+  <a ng-click="vm.getOneProduct(product._id)"></a>
+</figure>
+</div>

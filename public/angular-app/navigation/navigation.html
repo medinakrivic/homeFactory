@@ -1,0 +1,75 @@
+<!-- header -->
+	<div class="header" ng-controller="navigationController as vm">
+		<div class="container">
+			<div class="header-grid">
+				<div class="header-grid-left">
+					<ul>
+						<li><span class="glyphicon glyphicon-envelope"  aria-hidden="true"></span><a href="mailto:info@example.com">info@homefactory.com</a></li>
+						<li><span class="glyphicon glyphicon-earphone"  aria-hidden="true"></span>+1234 567 892</li>
+            <li ng-if="!vm.isLoggedIn()"><span class="glyphicon glyphicon-log-in"  aria-hidden="true"></span><a href="#/user/login">Login</a></li>
+						<li ng-if="!vm.isLoggedIn()"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><a href="#/user/register">Register</a></li>
+						<li ng-if="vm.isLoggedIn()"><a ng-click="vm.userProfile(vm.id)">{{ vm.loggedInUser }}</a></li>
+            <li ng-if="vm.isLoggedIn()"><a href="/" ng-click="vm.logout()">Logout</a></li>
+            <li ng-if="vm.userType=='admin'"><a href="#/admin/users" >Users</a></li>
+						<li ng-if="vm.userType=='admin'"><a href="#/admin/products" >Products</a></li>
+					</ul>
+				</div>
+				<div class="header-grid-right">
+					<ul class="social-icons">
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="g"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="logo-nav">
+				<div class="logo-nav-left ZoomIn">
+					<h1><a href="index.html">HomeFactory <span>Shop anywhere</span></a></h1>
+				</div>
+				<div class="logo-nav-right">
+					<div class="search-box">
+				</div>
+				<div class="header-right">
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!--<div class="logo-nav-sub"> -->
+				<div class="logo-nav-left1">
+					<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header nav_2">
+						<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="/" class="act">Home</a></li>
+							<!-- Mega Menu -->
+							<li class="dropdown">
+								<a href="#/products/accessories">Accessories <!-- <b class="caret">--></b></a>
+
+
+							<li class="dropdown">
+								<a href="#/products/furniture" class="dropdown-toggle" data-toggle="dropdown">Furniture <!-- <b class="caret">--></b></a>
+
+							<li><a href="#/products/lighting">Lighting</a></li>
+							<li><a href="#/products/outdoor">Outdoor</a></li>
+							<li><a href="#/products/rugs">Rugs</a></li>
+							<li><a href="#/products/walldecore">Wall decor</a></li>
+							<li><a ng-click="vm.userCart(vm.id)"  ng-if="vm.isLoggedIn()">My cart</a></li>
+
+						</ul>
+
+					</div>
+					</nav>
+				</div>
+			</div>
+				<!--</div>-->
+
+		</div>

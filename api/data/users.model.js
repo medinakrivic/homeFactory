@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var ObjectID = require('mongodb').ObjectID;
 
 var addressUser = new mongoose.Schema({
   address: String,
@@ -13,19 +14,17 @@ var CreditCard = new mongoose.Schema({
   CardHolder: String
  });
 
+ var Schema = mongoose.Schema,
+     ObjectId = Schema.ObjectId;
+
 var products = new mongoose.Schema({
 
   productName:{
-    type:String,
-    required:true
+    type:String
   },
-  productId:{
-    type:String,
-    required:true
-  },
+  ProductId: String,
   productDescription:String,
-  productPictures:[Buffer],   //binary data
-  payedPrice: String,
+  price: String
 });
 
   var userSchema = new mongoose.Schema({
@@ -51,13 +50,18 @@ var products = new mongoose.Schema({
       type: String ,
       required: true
     },
-    displayName: String,
+    userName: {
+      type:String,
+      unique : true,
+      required:true
+    },
     userType: {
       type: String ,
       required: true
     },
     address:[addressUser],
     products:[products],
+    cart:[products],
     creditCards:[CreditCard]
   });
 

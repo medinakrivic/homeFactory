@@ -1,0 +1,88 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li><a href="#/admin/users">Users</a></li>
+				<li class="active">Edit user</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+
+			<div class="container">
+  <h1 class="page-header">Edit Profile</h1>
+  <div class="row">
+
+    <!-- edit form column -->
+    <div class="col-md-6 col-sm-6 col-xs-12 login-form-grids">
+      <h3>Personal info</h3>
+      <form  name="vm.reviewForm" ng-submit="vm.updateUser()">
+				<input type="text" name="username" placeholder="Username" required ng-model="vm.username" class="register_margin" >
+				<div ng-show="vm.reviewForm.username.$dirty && vm.reviewForm.username.$invalid && vm.isSubmitted">
+				<p>Username is required field!</p>
+				</div>
+				<div ng-if="vm.userExists" class="my-notify-error" role="alert">
+					<p>{{ vm.userExists }}</p>
+				</div>
+				<input type="text" placeholder="First Name" required ng-model="vm.name" class="register_margin">
+				<div ng-show="vm.reviewForm.name.$dirty && vm.reviewForm.name.$invalid && vm.isSubmitted">
+				<p>Name is required field!</p>
+				</div>
+				<input type="text"  placeholder="Last Name" required ng-model="vm.surname" class="register_margin" >
+				<div ng-show="vm.reviewForm.surname.$dirty && vm.reviewForm.surname.$invalid && vm.isSubmitted">
+				<p>Surname is required field!</p>
+				</div>
+				<input type="text" name="city" placeholder="City" required  ng-model="vm.city" class="register_margin" >
+				<div ng-show="vm.reviewForm.city.$dirty && vm.reviewForm.city.$invalid && vm.isSubmitted">
+				<p>City is required field!</p>
+				</div>
+				<input type="tel" name="phone" placeholder="Phone number" required ng-pattern="/^[0-9]*$/" ng-model="vm.phone" class="register_margin">
+				<div ng-show="vm.reviewForm.phone.$dirty && vm.reviewForm.phone.$invalid && vm.isSubmitted && !vm.reviewForm.phone.$error.pattern">
+				<p>Phone is required field!</p>
+				</div>
+				<span class="my-notify-text" ng-show="vm.reviewForm.phone.$error.pattern && vm.isSubmitted">Invalid pattern!<br>Use numbers.</span>
+
+				<input type="email" name="email" placeholder="Email Address" required ng-model="vm.email" >
+				<div ng-show="vm.reviewForm.email.$dirty && vm.reviewForm.email.$invalid && vm.isSubmitted && !vm.reviewForm.phone.$error.pattern">
+				<p>Email is required field!</p>
+				</div>
+				<span class="my-notify-text" ng-show="vm.reviewForm.email.$error.pattern && vm.isSubmitted">Invalid pattern! <br>Example: example@exm.com</span>
+
+				<span class="my-notify-text" ng-show="'vm.password.length < 6' && vm.isSubmitted">Password must be longer than 6 characters</span>
+
+					<a ng-click="vm.deactivateAccount(vm.id)">Deactivate Account</a>
+
+
+            <input value="Save Changes" type="submit">
+						<div ng-if="vm.success" class="my-notify-success"  role="alert">
+							<p>{{ vm.success }}</p>
+						</div>
+      </form>
+
+
+    </div>
+
+		<!-- right column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+			  <h3>Bought products</h3>
+				<table class="products">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Price<th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr	ng-repeat="product in vm.products | limitTo:15">
+							<td>{{ product.productName }}</td>
+							<td>{{ product.price}} BAM </td>
+						</tr>
+					</tbody>
+				</table>
+
+    </div>
+  </div>
+</div>
+
+<!-- //register -->

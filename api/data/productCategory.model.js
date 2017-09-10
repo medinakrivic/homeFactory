@@ -26,3 +26,5 @@ var productCategorySchema = new mongoose.Schema({
     default: null},
   categoryPicture:Buffer
 });
+
+mongoose.model('ProductCategory',productCategorySchema,'ProductCategories');

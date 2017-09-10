@@ -1,0 +1,108 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li><a href="#/admin/products">Products</a></li>
+        <li class="active">Create product</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+
+<div class="container" style="padding-top: 60px;">
+<h1 class="page-header">Edit Product</h1>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-xs-12">
+</div>
+<!-- edit form column -->
+<div class="col-md-6 col-sm-6 col-xs-12 personal-info">
+<form class="form-horizontal" role="form" name="vm.reviewForm" ng-submit="vm.updateProduct()" >
+	<div class="form-group">
+		<label class="col-lg-3 control-label" >Name: </label>
+		<div class="col-lg-8">
+			<input class="form-control" type="text" name="name" ng-model="vm.productName" required>
+			<div ng-show="vm.reviewForm.name.$dirty && vm.reviewForm.name.$invalid && vm.isSubmitted">
+			<p>Name is required field!</p>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Description</label>
+		<div class="col-lg-8">
+			<textarea class="form-control" type="text" name="description" ng-model="vm.productDescription" required></textarea>
+			<div ng-show="vm.reviewForm.description.$dirty && vm.reviewForm.description.$invalid && vm.isSubmitted">
+			<p>Description is required field!</p>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Measures:</label>
+		<div class="col-lg-8">
+			<textarea class="form-control" type="text" ng-model="vm.productMeasures" ></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Picture:</label>
+		<div class="col-lg-8">
+			<input class="form-control" type="text" name="picture" ng-model="vm.productPictures" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Quantity:</label>
+		<div class="money">
+			<input class="form-control" type="number" name="quantity" min="0" ng-model="vm.quantity" required>
+			<div ng-show="vm.reviewForm.quantity.$dirty && vm.reviewForm.quantity.$invalid && vm.isSubmitted">
+			<p>Quantity is required field!</p>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">Price:</label>
+		<div class="money">
+	<input type="number" class="numberOnly" min="0" step="0.01" name="price" ng-model="vm.price" autocomplete="off" maxlength="50" required/><div>BAM</div>
+	<div ng-show="vm.reviewForm.price.$dirty && vm.reviewForm.price.$invalid && vm.isSubmitted">
+	<p>Price is required field!</p>
+	</div>
+
+	</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label" >Product categories:</label>
+		<div class="col-lg-8">
+			<div class="ui-select">
+				<select id="user_time_zone" name="category" required ng-options="category as category.categoryName for category in vm.productCategories track by category._id" ng-model="vm.productCategoryId" class="form-control" required>
+
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 control-label">User status:</label>
+		<div class="col-lg-8">
+			<div class="ui-select">
+				<select id="user_time_zone"  ng-model="vm.productStatus" class="form-control">
+					<option selected disabled hidden>Choose here</option>
+					<option ng-value="true" ng-selected="vm.productStatus" >Active</option>
+					<option ng-value="false" ng-selected="vm.productStatus==false">Inactive</option>
+					</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-md-3 control-label"></label>
+		<div class="col-md-8">
+			<input class="btn btn-primary" value="Save Changes" type="submit">
+		</div>
+	</div>
+</form>
+<div ng-if="vm.message" class="my-notify-success"  role="alert">
+	<p>{{ vm.message }}</p>
+</div>
+</div>
+<!-- right column -->
+<div class="col-md-3 col-sm-6 col-xs-12">
+</div>
+</div>
+</div>

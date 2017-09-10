@@ -1,0 +1,56 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">Users</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+	<div class="container" ng-controller="usersController">
+		<div class="row">
+			<div class="col-md-6"><h3 class="cTitle">List of users</h3></div>
+			<div class="col-md-3"></div>
+			<div class="col-md-3"><button class="myButton" ng-click="vm.createUser()">Create User</button></div>
+		</div>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Username</th>
+							<th>Email</th>
+							<th>Activity</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in vm.users">
+            <td>
+              {{ user.name }}
+            </td>
+            <td>
+              {{ user.surname }}
+            </td>
+						<td>
+							{{ user.userName}}
+						</td>
+            <td>
+              {{ user.email }}
+            </td>
+						<td >
+							{{ user.active}}
+						</td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-danger" ng-click="vm.userDelete(user._id)">Delete</button>
+                <button class="btn btn-warning" ng-click="vm.editUser(user._id)">Edit</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

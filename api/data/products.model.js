@@ -9,18 +9,24 @@ var price = new mongoose.Schema({
     payedPrice: String
 });
 
+var productCategory = new mongoose.Schema({
+  productCategoryId: {type: mongoose.Schema.Types.ObjectId},
+  categoryName:{
+    type: String,
+    required: true
+  },
+});
+
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
 var productSchema = new mongoose.Schema({
 
   productName:{
     type:String,
     required:true
   },
-  productId:{
-    type:String,
-    required:true
-  },
   price:{
-    type:price,
+    type:String,
     required:true
   },
   active: {
@@ -28,10 +34,12 @@ var productSchema = new mongoose.Schema({
     required: true,
     "default": true
   },
+  ProductId: String,
   productDescription: String,
   productMeasures: String,
   quantity:String,
-  productPictures:[Buffer]
+  productPictures:String,
+  productCategory: productCategory
 });
 
 mongoose.model('Product',productSchema);

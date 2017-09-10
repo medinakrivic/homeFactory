@@ -1,0 +1,51 @@
+<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1">
+				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">Checkout Page</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- checkout -->
+	<div class="checkout">
+		<div class="container">
+			<h3>Your shopping cart contains: </h3>
+			<div class="checkout-right">
+				<table class="timetable_sub">
+					<thead>
+						<tr>
+							<th>Product Name</th>
+							<th>Price</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tr class="rem1" ng-repeat="product in vm.products">
+						<td class="invert">{{product.productName}}</td>
+						<td class="invert">{{product.price}} BAM</td>
+						<td class="invert">
+							<div class="rem" style="position:center;">
+								<a ng-click="vm.removeFromCart(product._id,product.ProductId)"><span class="close1" > </span></a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--<div class="checkout-left">
+				<div class="checkout-left-basket">
+					<h4>Continue to basket</h4>
+					<ul>
+						<li ng-repeat="p in vm.products">{{p.productName}} <i>-</i> <span>{{p.price}} BAM </span></li>
+						<li>Total <i>-</i> <span>{{vm.total}}</span></li>
+					</ul>
+				</div>-->
+				<div class="checkout-right-basket">
+					<a href="#/products"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+					<a ng-click="vm.buyProduct()">Buy Products<span class="glyphicon glyphicon-menu-right" style="margin-left:5px;"aria-hidden="true"></span></a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //checkout -->

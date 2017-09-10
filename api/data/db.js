@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
-var dburl='mongodb://homefactory.tk:gjucUfqH@80.65.165.60:2721/homefactory?authSource=admin';
+var dburl='mongodb://homefactory.tk:gjucUfqH@172.16.200.240:2721/homefactory?authSource=admin';
+//var dburl='mongodb://localhost/homefactory';
+//var dburl='mongodb://homefactory.tk:gjucUfqH@80.65.165.60:2721/homefactory?authSource=admin';
+
 
 mongoose.Promise = global.Promise;
 
@@ -36,3 +39,4 @@ require('./users.model.js');
 require('./orders.model.js');
 require('./cart.model.js');
 require('./products.model.js');
+require('./productCategory.model.js');
